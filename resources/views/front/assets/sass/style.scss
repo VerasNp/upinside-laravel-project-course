@@ -1,4 +1,4 @@
-$font-primary: 'Miriam Libre', sans-serif;
+$font-primary: 'Miriam Libre', Arial, sans-serif;
 
 
 
@@ -7,8 +7,8 @@ $grid-gutter-width: 40px !default;
 $border-radius-base:  4px !default;
 $padding-base-vertical: 14px !default;
 
-$brand-primary: #F46460 !default;
-$brand-secondary: #27B4A8 !default;
+$brand-primary: #f4645f !default;
+$brand-secondary: #27b4a8 !default;
 
 $brand-white: #fff;
 $brand-black: #000;
@@ -486,7 +486,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			margin-bottom: 20px;
 			font-size: 54px;
 			line-height: 1.3;
-			font-weight: 300;
+			font-weight: 400;
 			@media screen and (max-width: $screen-sm) {
 				font-size: 30px;
 			}
@@ -760,7 +760,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			padding: 0;
 			opacity: 1;
 			font-size: 30px;
-			font-weight: 300;
+			font-weight: 400;
 			visibility: visible;
 			@include transition(.3s);
 		}
@@ -1541,7 +1541,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	border: 2px solid rgba(0, 0, 0, 0.1);
 	height: 54px;
 	font-size: 18px;
-	font-weight: 300;
+	font-weight: 400;
   	&:active, &:focus {
   		outline: none;
 		box-shadow: none;
