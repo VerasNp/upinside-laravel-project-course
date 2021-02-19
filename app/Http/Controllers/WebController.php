@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\Seo;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
     public function home()
     {
+        $posts = \App\Post::orderBy('created_at', 'DESC')->limit(3)->get();
         $head = $this->seo->render(env('APP_NAME') . ' - Upinside Treinamentos', 'Descrição teste', url('/'), asset('images/img/img_bg_1.jpg'));
-        return view('front.home', ['head' => $head]);
+        return view('front.home', [
+            'head' => $head,
+            'posts' => $posts
+        ]);
     }
 
     public function course()
