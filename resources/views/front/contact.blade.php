@@ -35,8 +35,8 @@
                 </div>
                 <div class="col-md-6 animate-box">
                     <h3>Me manda um e-mail</h3>
-                    <form action="#">
-
+                    <form action="{{route('send-mail')}}" method="POST">
+                        {{csrf_field()}}
                         <div class="row form-group">
                             <div class="col-md-6">
                                 <!-- <label for="fname">First Name</label> -->

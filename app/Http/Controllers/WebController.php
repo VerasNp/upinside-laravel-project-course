@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class WebController extends Controller
 {
@@ -46,5 +48,21 @@ class WebController extends Controller
     {
         $head = $this->seo->render(env('APP_NAME') . ' - Upinside Treinamentos', 'Descrição teste', route('contact'), asset('images/img/img_bg_1.jpg'));
         return view('front.contact');
+    }
+
+    public function sendMail(Request $request)
+    {
+        $data  = [
+            'reply_name' => $request->first_name . " " . $request->last_name,
+            'reply_email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message
+        ];
+
+        Mail::send(new Contact($data));
+
+        return redirect()->back();
+
+        return new Contact($data);
     }
 }
